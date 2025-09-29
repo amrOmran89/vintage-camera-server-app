@@ -1,100 +1,111 @@
 package com.amr.repository
 
-import com.amr.dto.Seller
-import com.amr.dto.VintageDto
-import com.amr.dto.VintageSectionDto
+import com.amr.dto.*
 
 object VintageRepository {
-    fun getVintageList(): VintageSectionDto {
-        return VintageSectionDto(
+
+    fun getVintageList(): CameraSectionDto {
+        return CameraSectionDto(
             title = "Vintage Cameras",
             items = listOf(
-                VintageDto(
+                CameraDto(
                     id = 1,
                     brand = "Canon",
                     model = "FD 50mm f/1.4",
                     image = "vintage1",
                     price = 199.99,
-                    currency = "EUR",
+                    currency = Currency.EUR,
                     description = "Fast standard prime from the Canon FD era with classic rendering.",
-                    seller = Seller(id = 1, name = "David Müller", ratings = 4.8f)
+                    seller = Seller(id = 1, name = "David Müller", ratings = 4.8f),
+                    type = CameraType.VINTAGE,
+                    year = 1979
                 ),
-                VintageDto(
+                CameraDto(
                     id = 2,
                     brand = "Nikon",
                     model = "Nikkor 35mm f/2",
                     image = "vintage2",
                     price = 149.99,
-                    currency = "EUR",
+                    currency = Currency.EUR,
                     description = "Compact Nikon wide with pleasing contrast and character.",
-                    seller = Seller(id = 2, name = "Sophie Becker", ratings = 4.6f)
+                    seller = Seller(id = 2, name = "Sophie Becker", ratings = 4.6f),
+                    type = CameraType.VINTAGE,
+                    year = 1975
                 ),
-                VintageDto(
+                CameraDto(
                     id = 3,
                     brand = "Leica",
                     model = "Summicron 50mm",
                     image = "vintage3",
                     price = 299.99,
-                    currency = "EUR",
+                    currency = Currency.EUR,
                     description = "Leica 50mm renowned for micro-contrast and crisp detail.",
-                    seller = Seller(id = 3, name = "Lukas Wagner", ratings = 4.9f)
+                    seller = Seller(id = 3, name = "Lukas Wagner", ratings = 4.9f),
+                    type = CameraType.VINTAGE,
+                    year = 1960
                 ),
-                VintageDto(
+                CameraDto(
                     id = 4,
                     brand = "Pentax",
                     model = "Super Takumar 55mm",
                     image = "vintage4",
                     price = 129.99,
-                    currency = "EUR",
+                    currency = Currency.EUR,
                     description = "Warm vintage tones and smooth bokeh from the Takumar line.",
-                    seller = Seller(id = 4, name = "Anna Schneider", ratings = 4.5f)
+                    seller = Seller(id = 4, name = "Anna Schneider", ratings = 4.5f),
+                    type = CameraType.VINTAGE,
+                    year = 1968
                 ),
-                VintageDto(
+                CameraDto(
                     id = 5,
                     brand = "Olympus",
                     model = "Zuiko 28mm f/3.5",
                     image = "vintage5",
                     price = 89.99,
-                    currency = "EUR",
+                    currency = Currency.EUR,
                     description = "Lightweight Zuiko wide-angle ideal for travel and street.",
-                    seller = Seller(id = 5, name = "Jonas Richter", ratings = 4.4f)
+                    seller = Seller(id = 5, name = "Jonas Richter", ratings = 4.4f),
+                    type = CameraType.VINTAGE,
+                    year = 1973
                 ),
-                VintageDto(
+                CameraDto(
                     id = 6,
                     brand = "Minolta",
                     model = "Rokkor 58mm f/1.4",
                     image = "vintage6",
                     price = 159.99,
-                    currency = "EUR",
+                    currency = Currency.EUR,
                     description = "Minolta classic with dreamy bokeh and gentle rendering.",
-                    seller = Seller(id = 6, name = "Clara Hoffmann", ratings = 4.7f)
+                    seller = Seller(id = 6, name = "Clara Hoffmann", ratings = 4.7f),
+                    type = CameraType.VINTAGE,
+                    year = 1969
                 )
             )
         )
     }
 
-    fun getAllList(): List<VintageDto> {
+    fun getAllList(): List<CameraDto> {
         return listOf(
-            VintageDto(1,"Canon","FD 50mm f/1.4","vintage1",199.99,"EUR","Fast standard prime from the Canon FD era with classic rendering.", Seller(1,"David Müller",4.8f)),
-            VintageDto(2,"Nikon","Nikkor 35mm f/2","vintage2",149.99,"EUR","Compact Nikon wide with pleasing contrast and character.", Seller(2,"Sophie Becker",4.6f)),
-            VintageDto(3,"Leica","Summicron 50mm f/2","vintage3",299.99,"EUR","Leica 50mm renowned for micro-contrast and crisp detail.", Seller(3,"Lukas Wagner",4.9f)),
-            VintageDto(4,"Pentax","Super Takumar 55mm f/1.8","vintage4",129.99,"EUR","Warm vintage tones and smooth bokeh from the Takumar line.", Seller(4,"Anna Schneider",4.5f)),
-            VintageDto(5,"Olympus","Zuiko 28mm f/3.5","vintage5",89.99,"EUR","Lightweight Zuiko wide-angle ideal for travel and street.", Seller(5,"Jonas Richter",4.4f)),
-            VintageDto(6,"Minolta","Rokkor 58mm f/1.4","vintage6",159.99,"EUR","Minolta classic with dreamy bokeh and gentle rendering.", Seller(6,"Clara Hoffmann",4.7f)),
-            VintageDto(7,"Canon","FL 35mm f/2.5","vintage1",119.99,"EUR","Compact Canon FL wide with vintage contrast.", Seller(1,"David Müller",4.8f)),
-            VintageDto(8,"Nikon","Series E 50mm f/1.8","vintage2",99.99,"EUR","Nifty fifty from the Series E line—lightweight and sharp.", Seller(2,"Sophie Becker",4.6f)),
-            VintageDto(9,"Leica","Elmar 90mm f/4","vintage3",249.99,"EUR","Classic telephoto with smooth rendering and gentle contrast.", Seller(3,"Lukas Wagner",4.9f)),
-            VintageDto(10,"Pentax","SMC 35mm f/3.5","vintage4",79.99,"EUR","SMC coatings provide crisp contrast and flare resistance.", Seller(4,"Anna Schneider",4.5f)),
-            VintageDto(11,"Olympus","Zuiko 50mm f/1.8","vintage5",109.99,"EUR","Reliable everyday fifty with clean, neutral rendering.", Seller(5,"Jonas Richter",4.4f)),
-            VintageDto(12,"Minolta","MC Rokkor 35mm f/2.8","vintage6",89.99,"EUR","Solid Minolta wide-angle for street and landscapes.", Seller(6,"Clara Hoffmann",4.7f)),
-            VintageDto(13,"Contax","Zeiss Planar 50mm f/1.7","vintage1",349.99,"EUR","Zeiss Planar signature pop and micro-contrast.", Seller(7,"Felix Weber",4.9f)),
-            VintageDto(14,"Canon","FD 135mm f/2.5","vintage2",179.99,"EUR","Telephoto portrait lens with pleasing compression and bokeh.", Seller(1,"David Müller",4.8f)),
-            VintageDto(15,"Nikon","Micro-Nikkor 55mm f/3.5","vintage3",199.99,"EUR","Macro-capable standard reaching 1:2 magnification with adapters.", Seller(2,"Sophie Becker",4.6f)),
-            VintageDto(16,"Leica","Summilux 35mm f/1.4","vintage4",399.99,"EUR","Iconic fast 35mm with characterful wide-open look.", Seller(3,"Lukas Wagner",4.9f)),
-            VintageDto(17,"Pentax","Super Takumar 135mm f/3.5","vintage5",149.99,"EUR","Compact 135mm with classic tones and smooth backgrounds.", Seller(4,"Anna Schneider",4.5f)),
-            VintageDto(18,"Olympus","Zuiko 135mm f/3.5","vintage6",129.99,"EUR","Lightweight telephoto ideal for travel and portraits.", Seller(5,"Jonas Richter",4.4f)),
-            VintageDto(19,"Minolta","MC Rokkor 85mm f/1.7","vintage1",159.99,"EUR","Classic portrait focal length with creamy bokeh.", Seller(6,"Clara Hoffmann",4.7f)),
-            VintageDto(20,"Contax","Zeiss Sonnar 135mm f/2.8","vintage2",299.99,"EUR","Zeiss Sonnar telephoto with strong contrast and color.", Seller(7,"Felix Weber",4.9f))
+            CameraDto(id =1, brand ="Canon", model = "FD 50mm f/1.4", image = "vintage1", price = 199.99, currency = Currency.EUR, description = "Fast standard prime from the Canon FD era with classic rendering.", seller = Seller(1,"David Müller",4.8f), type = CameraType.VINTAGE,year = 1979),
+            CameraDto(id =2, brand ="Nikon", model = "Nikkor 35mm f/2", image = "vintage2", price = 149.99, currency = Currency.EUR, description = "Compact Nikon wide with pleasing contrast and character.", seller = Seller(2,"Sophie Becker",4.6f), type = CameraType.VINTAGE,year = 1975),
+            CameraDto(id =3, brand ="Leica", model = "Summicron 50mm f/2", image = "vintage3", price = 299.99, currency = Currency.EUR, description = "Leica 50mm renowned for micro-contrast and crisp detail.", seller = Seller(3,"Lukas Wagner",4.9f), type = CameraType.VINTAGE,year = 1960),
+            CameraDto(id =4, brand ="Pentax", model = "Super Takumar 55mm f/1.8", image = "vintage4", price = 129.99, currency = Currency.EUR, description = "Warm vintage tones and smooth bokeh from the Takumar line.", seller = Seller(4,"Anna Schneider",4.5f), type = CameraType.VINTAGE,year = 1968),
+            CameraDto(id =5, brand ="Olympus", model = "Zuiko 28mm f/3.5", image = "vintage5", price = 89.99, currency = Currency.EUR, description = "Lightweight Zuiko wide-angle ideal for travel and street.", seller = Seller(5,"Jonas Richter",4.4f), type = CameraType.VINTAGE,year = 1973),
+            CameraDto(id =6, brand ="Minolta", model = "Rokkor 58mm f/1.4", image = "vintage6", price = 159.99, currency = Currency.EUR, description = "Minolta classic with dreamy bokeh and gentle rendering.", seller = Seller(6,"Clara Hoffmann",4.7f), type = CameraType.VINTAGE,year = 1969),
+            CameraDto(id =7, brand ="Canon", model = "FL 35mm f/2.5", image = "vintage1", price = 119.99, currency = Currency.EUR, description = "Compact Canon FL wide with vintage contrast.", seller = Seller(1,"David Müller",4.8f), type = CameraType.VINTAGE,year = 1965),
+            CameraDto(id =8, brand ="Nikon", model = "Series E 50mm f/1.8", image = "vintage2", price = 99.99, currency = Currency.EUR, description = "Nifty fifty from the Series E line—lightweight and sharp.", seller = Seller(2,"Sophie Becker",4.6f), type = CameraType.VINTAGE,year = 1980),
+            CameraDto(id =9, brand ="Leica", model = "Elmar 90mm f/4", image = "vintage3", price = 249.99, currency = Currency.EUR, description = "Classic telephoto with smooth rendering and gentle contrast.", seller = Seller(3,"Lukas Wagner",4.9f), type = CameraType.VINTAGE,year = 1954),
+            CameraDto(id =10, brand ="Pentax", model = "SMC 35mm f/3.5", image = "vintage4", price = 79.99, currency = Currency.EUR, description = "SMC coatings provide crisp contrast and flare resistance.", seller = Seller(4,"Anna Schneider",4.5f), type = CameraType.VINTAGE,year = 1971),
+            CameraDto(id =11, brand ="Olympus", model = "Zuiko 50mm f/1.8", image = "vintage5", price = 109.99, currency = Currency.EUR, description = "Reliable everyday fifty with clean, neutral rendering.", seller = Seller(5,"Jonas Richter",4.4f), type = CameraType.VINTAGE,year = 1979),
+            CameraDto(id =12, brand ="Minolta", model = "MC Rokkor 35mm f/2.8", image = "vintage6", price = 89.99, currency = Currency.EUR, description = "Solid Minolta wide-angle for street and landscapes.", seller = Seller(6,"Clara Hoffmann",4.7f), type = CameraType.VINTAGE,year = 1973),
+            CameraDto(id =13, brand ="Contax", model = "Zeiss Planar 50mm f/1.7", image = "vintage1", price = 349.99, currency = Currency.EUR, description = "Zeiss Planar signature pop and micro-contrast.", seller = Seller(7,"Felix Weber",4.9f), type = CameraType.VINTAGE,year = 1975),
+            CameraDto(id =14, brand ="Canon", model = "FD 135mm f/2.5", image = "vintage2", price = 179.99, currency = Currency.EUR, description = "Telephoto portrait lens with pleasing compression and bokeh.", seller = Seller(1,"David Müller",4.8f), type = CameraType.VINTAGE,year = 1976),
+            CameraDto(id =15, brand ="Nikon", model = "Micro-Nikkor 55mm f/3.5", image = "vintage3", price = 199.99, currency = Currency.EUR, description = "Macro-capable standard reaching 1:2 magnification with adapters.", seller = Seller(2,"Sophie Becker",4.6f), type = CameraType.VINTAGE,year = 1973),
+            CameraDto(id =16, brand ="Leica", model = "Summilux 35mm f/1.4", image = "vintage4", price = 399.99, currency = Currency.EUR, description = "Iconic fast 35mm with characterful wide-open look.", seller = Seller(3,"Lukas Wagner",4.9f), type = CameraType.VINTAGE,year = 1961),
+            CameraDto(id =17, brand ="Pentax", model = "Super Takumar 135mm f/3.5", image = "vintage5", price = 149.99, currency = Currency.EUR, description = "Compact 135mm with classic tones and smooth backgrounds.", seller = Seller(4,"Anna Schneider",4.5f), type = CameraType.VINTAGE,year = 1970),
+            CameraDto(id =18, brand ="Olympus", model = "Zuiko 135mm f/3.5", image = "vintage6", price = 129.99, currency = Currency.EUR, description = "Lightweight telephoto ideal for travel and portraits.", seller = Seller(5,"Jonas Richter",4.4f), type = CameraType.VINTAGE,year = 1974),
+            CameraDto(id =19, brand ="Minolta", model = "MC Rokkor 85mm f/1.7", image = "vintage1", price = 159.99, currency = Currency.EUR, description = "Classic portrait focal length with creamy bokeh.", seller = Seller(6,"Clara Hoffmann",4.7f), type = CameraType.VINTAGE,year = 1972),
+            CameraDto(id =20, brand ="Contax", model = "Zeiss Sonnar 135mm f/2.8", image = "vintage2", price = 299.99, currency = Currency.EUR, description = "Zeiss Sonnar telephoto with strong contrast and color.", seller = Seller(7,"Felix Weber",4.9f), type = CameraType.VINTAGE,year = 1973),
         )
     }
 }
