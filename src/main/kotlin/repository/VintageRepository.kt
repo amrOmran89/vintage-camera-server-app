@@ -9,30 +9,6 @@ object VintageRepository {
             title = "Vintage Cameras",
             items = listOf(
                 CameraDto(
-                    id = 1,
-                    brand = "Canon",
-                    model = "FD 50mm f/1.4",
-                    image = "vintage1",
-                    price = 199.99,
-                    currency = Currency.EUR,
-                    description = "Fast standard prime from the Canon FD era with classic rendering.",
-                    seller = Seller(id = 1, name = "David Müller", ratings = 4.8f),
-                    type = CameraType.VINTAGE,
-                    year = 1979
-                ),
-                CameraDto(
-                    id = 2,
-                    brand = "Nikon",
-                    model = "Nikkor 35mm f/2",
-                    image = "vintage2",
-                    price = 149.99,
-                    currency = Currency.EUR,
-                    description = "Compact Nikon wide with pleasing contrast and character.",
-                    seller = Seller(id = 2, name = "Sophie Becker", ratings = 4.6f),
-                    type = CameraType.VINTAGE,
-                    year = 1975
-                ),
-                CameraDto(
                     id = 3,
                     brand = "Leica",
                     model = "Summicron 50mm",

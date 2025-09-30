@@ -6,10 +6,11 @@ import io.ktor.server.routing.*
 
 fun Application.configureRouting() {
     routing {
-        lensRoute()
-        brandRoute()
-        vintageRoute()
-        dslrRoute()
-        checkoutRoute()
+        lensRoute(Constants.BASE_URL_V1)
+        brandRoute(Constants.BASE_URL_V1)
+        vintageRoute(Constants.BASE_URL_V1)
+        dslrRoute(Constants.BASE_URL_V1)
+        checkoutRoute(Constants.BASE_URL_V1)
+        favoriteRoute(Constants.BASE_URL_V1)
     }
 }
